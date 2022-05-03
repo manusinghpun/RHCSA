@@ -1,4 +1,4 @@
-//directory structure----  
+//----directory structure----  
 /usr	: installed sw
 /usr/bin: user commands
 /usr/sbin: admin commands

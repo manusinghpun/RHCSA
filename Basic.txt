@@ -43,3 +43,7 @@ man command_name
 
 //give info about pwd cmd
 pwd --info		
+
+
+-------------------------------------------------
+https://www.youtube.com/watch?v=4xp5pxbJl2I&list=PL6E76193680F9D471
