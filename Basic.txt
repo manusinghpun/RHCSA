@@ -1,0 +1,6 @@
+//normal user
+[user@host ~]$
+
+//root user
+[root@host ~]#
+
