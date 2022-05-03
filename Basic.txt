@@ -4,3 +4,34 @@
 //root user
 [root@host ~]#
 
+//remote login
+ssh remoteuser@remotehost-OR-ip
+
+//log using public key auth---mylab.pem is user's private key file
+ssh -i mylab.pem remoteuser@remotehost	
+
+//user logging out of an SSH session
+exit
+
+//create private & public key for key based auth
+// private and public keys are saved in the   /home/user/.ssh/id_rsa and /home/user/.ssh/id_rsa.pub files
+ssh-keygen	
+
+//create set of SSH keys with passphrase protection
+ssh-keygen -f .ssh/key2
+
+//share the pubic key
+ssh-copy-id -i .ssh/key-with-pass.pub user@remotehost
+
+//avoid interactively typing in the passphrase while logging in with SSH
+eval $(ssh-agent)
+
+//switch to operator1
+su - operator1	
+
+//details of available memorey
+free -hw  
+
+//details about last cmd run
+`which time` -v df-h 
+
