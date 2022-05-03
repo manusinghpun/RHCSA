@@ -1,0 +1,67 @@
+//directory structure----  
+/usr	: installed sw
+/usr/bin: user commands
+/usr/sbin: admin commands
+/usr/local: locally customized sw
+/tmp    : world-writable space for tem files
+/etc	: config files
+/home	: users home directories
+/root	: home directory for root
+/dev	: device files
+
+
+//create dir
+mkdir directory1 directory2  directory3 
+
+//create dir with missing parent directory
+mkdir -p video/directory1 song/directory2
+
+//copy a file
+cp file new-file	
+
+//copy a dir and its contents
+cp -r directory new-directory	
+
+//move or rename a file or dir
+mv file new-file
+
+//remove a file
+rm file 
+
+//remove a dir
+rm -r directory	
+
+//remove empty dir
+rmdir directory
+
+//prompt for confirmation before deleting
+rm -rfi filename
+
+//create empty file
+touch file.text 
+
+//read content of file
+cat filename
+
+//verify current working directory
+pwd
+
+//create hard links b/w files
+ln newfile.txt /tmp/newfile-hlink2.txt	
+
+//find whether two files are hard links of each other
+ls -il newfile.txt /tmp/newfile-hlink2.txt	
+
+//if files are on the same file system and their inode numbers are the same, the files are hard links pointing to same data
+
+//create soft links b/w files
+ln -s /home/user/newfile-link2.txt /tmp/newfile-symlink.txt	
+
+//view the link count for the file
+ls -l files/source.file	
+
+//list the directories
+df
+
+
+

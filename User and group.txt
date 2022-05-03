@@ -1,0 +1,9 @@
+# id			//show info about the currently logged-in user
+# ls -l 		//view the owner of file
+# ls -ld		//view owner of dir
+# su or # su -	// switch to root
+--- /etc/passwd file contains info about users
+--- /etc/group file contains info about groups
+# sudo cmd_name		//cmd run as root user
+--- all cmds executed as sudo are logged by default to /var/log/secure
+--- /etc/sudoers    config file for sudo

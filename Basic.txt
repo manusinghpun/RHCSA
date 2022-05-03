@@ -35,3 +35,11 @@ free -hw
 //details about last cmd run
 `which time` -v df-h 
 
+//location of hostfile 
+/etc/hostname
+
+//maual about any command
+man command_name
+
+//give info about pwd cmd
+pwd --info		
