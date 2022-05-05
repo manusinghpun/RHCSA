@@ -64,4 +64,10 @@ ls -l files/source.file
 df
 
 
+//view the owner of file
+ls -l  filename
+
+//view owner of dir
+ls -ld dirname
+
 

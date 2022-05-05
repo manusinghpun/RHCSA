@@ -1,9 +1,30 @@
-# id			//show info about the currently logged-in user
-# ls -l 		//view the owner of file
-# ls -ld		//view owner of dir
-# su or # su -	// switch to root
---- /etc/passwd file contains info about users
---- /etc/group file contains info about groups
-# sudo cmd_name		//cmd run as root user
---- all cmds executed as sudo are logged by default to /var/log/secure
---- /etc/sudoers    config file for sudo
+//show info about the currently logged-in user
+id	
+
+//- /etc/passwd file contains info about users
+//- /etc/group file contains info about groups
+// user password stored in    /etc/shadow file
+//main config file for sudo is /etc/sudoers
+
+//to enable full sudo access for the user01, create /etc/sudoers.d/user01 
+user01 ALL=(ALL)  ALL
+
+//to enable full sudo access for the group01, create /etc/sudoers.d/group01
+%group01 ALL(ALL) ALL
+
+//setup sudo to allow a user to run commands as another user without entering their password
+anisible ALL(ALL) NOPASSWD:ALL
+
+
+// all cmds executed as sudo are logged by default to /var/log/secure
+
+//sudo su - command sets up the root enviornment exactly like a normal login because the su - command
+//ignores the settings made by sudo and sets up the env from scratch.
+//we can make sudo -i behave like su- by editing /etc/sudoers with visudo
+Defaults secure_path = /sbin:/bin:/usr/sbin:/usr/bin
+..
+replace above line with
+..
+Defaults secure_path = /usr/local/bin:/usr/bin
+Defaults>root secure_path = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+

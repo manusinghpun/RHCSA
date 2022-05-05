@@ -44,6 +44,26 @@ man command_name
 //give info about pwd cmd
 pwd --info		
 
+//view process info
+ps -au
+
+// switch to root
+su
+su -	
+
+//cmd run as root user- users who use sudo to run commands as root do not need to 
+//know the root password. Instead, they use their ownpasswords to authenticate access
+sudo cmd_name	
+
+//access the root account
+sudo -i
+
+//view content of file
+tail /var/log/secure
+
+
+//print value of user home dir
+echo $HOME
 
 -------------------------------------------------
 https://www.youtube.com/watch?v=4xp5pxbJl2I&list=PL6E76193680F9D471
