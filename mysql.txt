@@ -1,0 +1,60 @@
+1. Adding the MySQL Yum Repository
+   a. Download MySQL Yum repository from  https://dev.mysql.com/downloads/mysql/ 
+    select OS : Red Hat Enterprise Linux/Oracle
+
+   b. unzip the tar
+
+   c. Install the download package 
+        >sudo yum localinstall  mysql-community-common-8.0.26-1.el8.x86_64.rpm
+        >sudo yum localinstall mysql-community-client-plugins-8.0.26-1.el8.x86_64.rpm
+        >sudo yum localinstall mysql-community-libs-8.0.26-1.el8.x86_64.rpm
+        >sudo yum localinstall mysql-community-client-8.0.26-1.el8.x86_64.rpm
+        >sudo yum localinstall mysql-community-icu-data-files-8.0.29-1.el8.x86_64.rpm
+
+    d. check which mariadb package is installed
+        >rpm -qa | grep mariadb
+
+    e. remove all mariadb packages
+        >rpm -ev --nodeps mariadb-connector.........   
+    
+    f. instal package
+        >rpm -ivh mysql-community-server-8.0.26-1.el8.x86_64.rpm
+
+   g. check that the MySQL Yum repository has been successfully added
+        >yum repolist enabled | grep "mysql.*-community.*"
+
+   h. list all the subrepositories in mysql yum repository
+        >yum repolist all | grep mysql
+
+   i. Enable or disable any subrepository
+        >sudo yum-config-manager --disable mysql57-community
+        >sudo yum-config-manager --enable mysql56-community
+
+   j list enabled subrepositories
+        >yum repolist enabled  | grep mysql
+
+2. disable the default mysql module from rhel8 or oracle linux8
+    >sudo yum module disable mysql
+
+3. installing mysql
+    >sudo yum install mysql-community-server
+
+4. Starting the mysql server
+    >sudo service mysqld start
+
+5. check status of mysql server
+    >sudo service mysqld status
+        or
+    >systemctl status mysqld
+
+6. check mysql verion
+    >mysql --version
+
+7. securing the mysql installation
+    a. MySQL version 8.0 or higher generates a temporary random password in /var/log/mysqld.log after installation.
+        >grep 'temporary password' /var/log/mysqld.log
+    
+    b. secure installation
+        >mysql_secure_installation       //enter temporary password string in first step
+
+
