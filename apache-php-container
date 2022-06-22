@@ -1,0 +1,24 @@
+1. Download container image
+    >podman login registry.redhat.io
+    >podman pull registry.redhat.io/rhel8/php-80:1-10.1655148219
+
+2. list locally stored images
+    >podman images
+
+3. inspect locally stored image and return info 
+    > podman inspect registry.redhat.io/rhel8/php-80
+
+4. run podman container 
+    >podman run -dit --name apache-php -p 80:80  registry.redhat.io/rehl8/php-80 /bin/bash
+
+5. list all containers in host 
+    >podman ps -a
+
+6. stop podman container
+    > podman stop apache-php
+
+7. remove container 
+    >podman rm apache-php
+
+8. enter into container using bash shell
+    >podman exec -it apache-php /bin/bash

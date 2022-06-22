@@ -57,4 +57,12 @@
     b. secure installation
         >mysql_secure_installation       //enter temporary password string in first step
 
+8. stop mysql service
+    >service mysqld stop
 
+9. uninstall mysql
+    >sudo systemctl stop mysqld
+    >sudo yum remove mysql*
+    >sudo yum autoremove 
+    >sudo yum atuoclean
+    >rm -rf /var/lib/mysql/
