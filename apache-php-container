@@ -1,6 +1,6 @@
 1. Download container image
-    >podman login registry.redhat.io
-    >podman pull registry.redhat.io/rhel8/php-80:1-10.1655148219
+    >podman login docker.io
+    >podman pull php:7.4-apache
 
 2. list locally stored images
     >podman images
@@ -9,7 +9,7 @@
     > podman inspect registry.redhat.io/rhel8/php-80
 
 4. run podman container 
-    >podman run -dit --name apache-php -p 80:80  registry.redhat.io/rehl8/php-80 /bin/bash
+    >podman run -dit --name apache-php -p 80:80  registry.redhat.io/rehl8/php-80:tag_name    /bin/bash
 
 5. list all containers in host 
     >podman ps -a
@@ -22,3 +22,12 @@
 
 8. enter into container using bash shell
     >podman exec -it apache-php /bin/bash
+
+9. Remove a locally stored image using the podman rmi command
+    >podman rmi image_name 
+
+10. export image to tar
+    >podman save -o php.tar docker.io/php:7.4-apache 
+
+11. load image from tar
+    >podman load -i php.tar
